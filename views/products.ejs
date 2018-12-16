@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title>Products</title>
+ <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+ <link rel="stylesheet" 
+ href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+ <style>
+  html{
+   padding:50px;
+  }
+ </style>
+</head>
+
+<body style = "background: #90ccf4;">
+        <div class="container"  style = "background: #f5f7fa;">
+         <div class ="page-header text-center">
+          <h1>Fridge Products</h1>
+                <a href = "/profile" class ="btn btn-danger btn-sm">Dashboard</a>
+                <a href = "/products" class ="btn btn-danger btn-sm">Products</a>
+                <a href="/logout" class="btn btn-danger btn-sm">Logout</a>  
+         </div>
+        </div>
+        
+<div class="container" style = "background:#ececec;">
+<main>
+        <div class="page-data">
+         <div class="data-btn">
+             <br><br>
+            <button><a href="products/add">Add Product</a></button>
+           
+         </div>
+         <br><br>
+         <div class="data-table" >
+            <table border="1" cellpadding="7" cellspacing="7" >
+
+                    <tr>
+                            <td><b>ProductID</b></td>
+                            <td><b>Name</b></td>
+                            <td><b>Category</b></td>
+                            <td><b>Quantity</b></td>
+                            <td><b>Expiration</b></td>
+                            <td><b>Calories</b></td>
+                            <td><b>Serving</b></td>
+                            <td><b>Action</b></td>
+                        </tr>
+                               
+                <% if(data.length){ 
+                                
+                 for(var i = 0;i < data.length;i++) { %>
+                 
+                <tr>
+                    <td><%=data[i].productID%></td>
+                    <td><%=data[i].name%></td>
+                    <td><%=data[i].category%></td>
+                    <td><%=data[i].quantity%></td>
+                    <td><%=data[i].expiration%></td>
+                    <td><%=data[i].calories%></td>
+                    <td><%=data[i].serving%></td>
+                    <td>
+                        <a class="a-inside edit" href="../products/edit/<%=data[i].productID%>">Edit</a>
+                       
+                        <a class="a-inside delete" href="../products/delete/<%=data[i].productID%>">Delete</a>
+                       
+                    </td>
+                </tr>
+               
+            <% }
+            
+             }else{ %>
+                 <tr>
+                    <td colspan="7">No products</td>
+                 </tr>
+            <% } %>
+                
+                              
+                
+            </table>
+            <br><br>
+         </div>
+        </div>
+</main>    
+        
+</div>
+</body>
+</html>

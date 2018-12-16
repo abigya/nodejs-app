@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title>Profile</title>
+ <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+ <link rel="stylesheet" 
+ href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+ <style>
+  html{
+   padding:50px;
+  }
+  img {
+    margin: 0 auto;
+    height: 250px;
+    width: 250px;
+}
+iframe{
+    margin: 0 auto;
+    height: 250px;
+    width: 250px;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 10px;
+  background-color: #f78888;
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid black;
+  text-align: center;
+  font-size: 30px;
+}
+ </style>
+</head>
+<body style = "background:  #90ccf4;">
+ <div class="container" style = "background: #f5f7fa;">
+  <div class="page-header text-center">
+   <h1>Dashboard</h1>
+   <a href = "/profile" class ="btn btn-danger btn-sm">Dashboard</a>
+   <a href = "/products" class ="btn btn-danger btn-sm">Products</a>
+   <a href="/logout" class="btn btn-danger btn-sm">Logout</a>
+  </div>
+
+  <div class="row">
+   <div class="col-sm-12">
+    <div class="well" style = "background: #f3d250">
+     <h3><span class="fa fa-user"></span> Welcome <%= user.username %></h3>
+
+     <p>
+      <strong>userID</strong> <%= user.userID %> <br>
+      <strong>username</strong> <%= user.username %> <br>
+      <strong>This is just a basic user dashboard!</strong><br>
+      <strong>The first three squares are web widgets and are loaded</strong>
+      <strong>as long as there is an internet connection.</strong>
+     </p>
+    </div>
+   </div>
+  </div>
+  <div class ="grid-container">
+     <div >
+        <div class="cleanslate w24tz-current-time w24tz-large" style="display: inline-block !important; visibility: hidden !important; min-width:250px !important; min-height:250px !important; "><p><a href="//24timezones.com/usa_time/ma_middlesex/medford.php" style="text-decoration: none" class="clock24" id="tz24-1544916349-cu116070-eyJob3VydHlwZSI6MTIsInNob3dkYXRlIjoiMSIsInNob3dzZWNvbmRzIjoiMCIsImNvbnRhaW5lcl9pZCI6ImNsb2NrX2Jsb2NrX2NiNWMxNThkN2RkODgxNCIsInR5cGUiOiJkYiIsImxhbmciOiJlbiJ9" title="time at Medford" target="_blank" rel="nofollow">Current time in Boston</a></p><div id="clock_block_cb5c158d7dd8814"></div></div>
+        <script type="text/javascript" src="//w.24timezones.com/l.js" async></script>
+     </div>
+     
+<div >
+    <iframe src="https://open.spotify.com/embed/track/3yWsWi2PAo9s6elIhnywIS" width="250" height="250" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+</div>
+<div >   
+    <!-- weather widget start --><a target="_blank" href="https://www.booked.net/weather/boston-60"><img src="https://w.bookcdn.com/weather/picture/4_60_0_1_cfbce0_350_ffffff_333333_08488D_1_ffffff_333333_0_6.png?scode=124&domid=w209&anc_id=39503"  alt="booked.net"/></a><!-- weather widget end -->
+
+
+</div>
+<div>
+    <img src = "https://data.whicdn.com/images/33998874/original.gif">
+</div>
+
+</div>
+<br><br>
+ </div>
+
+</body>
+</html>
