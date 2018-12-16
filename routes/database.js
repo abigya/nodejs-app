@@ -3,7 +3,8 @@ var connection = mysql.createConnection({
     host     : '127.0.0.1',
     user     : 'root',
     password : 'Abigy@15',
-    database : 'smartfridge'
+    database : 'smartfridge',
+    port     : 3306
 });
 
 //connection.connect(function(err) {
